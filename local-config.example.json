@@ -1,0 +1,5 @@
+{
+  "factorio_app": "~/Library/Application Support/Steam/steamapps/common/Factorio/factorio.app",
+  "cmake": "/opt/homebrew/bin/cmake",
+  "team_id": "..."
+}
