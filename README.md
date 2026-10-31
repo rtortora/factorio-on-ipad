@@ -33,32 +33,33 @@ distributing altered versions of Factorio. Don't upload the `.app` or `.ipa`,
 don't post it anywhere, and don't AirDrop it to anyone. Each person should build
 their own from their own copy of the game from a copy that they legally own.
 
+This repo is built upon the very excellent work by
+[github-e51](https://github.com/github-e51/factorio-native-arm-ipad). I fixed a
+number of problems and customized it to my personal tastes to the point that I
+decided to un-fork it and make this version available.
+
 ## When Steam updates Factorio
 
 The build only accepts the exact 2.1.24 executable. It checks the executable's
 SHA-256 hash, and the patches are specific to that build. When Steam updates
-Factorio, the hash changes, the build window reports the version as
-unsupported, and you can't build.
+Factorio, the hash changes, the build window reports the version as unsupported,
+and you can't build.
 
 - **Already installed the app?** It's unaffected. A Steam update changes the
   copy on your Mac, not the one on your iPad. Only the next build is affected.
 - **Need 2.1.24 back?** In Steam, right-click Factorio and choose **Properties →
-  Betas**, and pick a branch that provides 2.1.24 if one is listed. Otherwise
-  download that version from your account at factorio.com. Turn off automatic
-  updates for the game (**Properties → Updates**) so it doesn't update again.
+  Game Versions & Betas**, and pick a branch that provides 2.1.24 if one is
+  listed. If you download a version from your account at factorio.com, it will
+  have a different hash, so you'll need to use AI to hack this repo to support
+  that (or, if you want to YOLO it, just try updating the hash check I guess).
 - **Want a newer version?** Support has to be ported. Each update has to be
   re-verified and re-patched; see
   [PORTING_PLAYBOOK.md](./docs/PORTING_PLAYBOOK.md), which uses the 2.1.24
   update as its worked example.
 
 Everything is copied from your own Mac at build time, including every
-third-party mod you have enabled in Factorio there, even ones that change
-gameplay. Disable any you don't want on the iPad before you install.
-
-This repo is built upon the very excellent work by
-[github-e51](https://github.com/github-e51/factorio-native-arm-ipad). I fixed a
-number of problems and customized it to my personal tastes to the point that I
-decided to un-fork it and make this version available.
+third-party mod you have enabled in Factorio there. Disable any you don't want
+on the iPad before you install.
 
 ## 1. Set up the iPad and signing
 
@@ -85,8 +86,8 @@ and
 
 ## 2. Build and install
 
-Use a Mac with Apple Silicon. Double-click `Build.command` in Finder, or run
-it in a Terminal:
+Use a Mac with Apple Silicon. Double-click `Build.command` in Finder, or run it
+in a Terminal:
 
 ```sh
 ./Build.command
